@@ -6,6 +6,6 @@ export class ProductsService {
   constructor(private readonly productsRepository: ProductsRepository) {}
 
   handleProductRequest(payload) {
-    return this.subscriptionPlansRepository.insertAndFetch(payload);
+    return this.productsRepository.sendCreateProductRequest(payload);
   }
 }

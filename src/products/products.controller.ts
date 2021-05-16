@@ -1,4 +1,4 @@
-import { Controller, Post, HttpCode } from '@nestjs/common';
+import { Controller, Post, HttpCode, Body } from '@nestjs/common';
 import { ProductsService } from './products.service';
 
 @Controller('api/products')
@@ -7,7 +7,8 @@ export class ProductsController {
 
   @Post()
   @HttpCode(200)
-  async handleRequest() {
-    this.productsService.handleProductRequest;
+  async handleRequest(@Body() productRequestBody) {
+    this.productsService.handleProductRequest(productRequestBody);
+    return;
   }
 }
